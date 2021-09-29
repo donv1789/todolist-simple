@@ -9,3 +9,4 @@
 ### Overview
 - tìm hiểu docker
 - dockerfile
+- docker-compose
