@@ -13,7 +13,7 @@
         sh '''echo build steps'''
     }
     stage('Test') {
-        sh 'docker-compose up'
+        sh 'sudo docker-compose up'
     }
 }
 // }
