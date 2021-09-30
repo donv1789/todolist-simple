@@ -9,7 +9,7 @@ services:
       - ${FRONT_PORTS}
     depends_on:
       - api
-    restart: always
+  #  restart: always
   api:
     build:
       context: ./server
