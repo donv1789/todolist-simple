@@ -1,4 +1,4 @@
-pipeline{
+// pipeline{
     // agent any
     // stages {
     //     stage('Clone') {
@@ -7,8 +7,8 @@ pipeline{
     //         }
     //     }
         
-    // }
-    node('Slave2'){
+    // }('Slave2')
+    node{
     stage('Build') {
         sh '''echo build steps'''
     }
@@ -16,4 +16,4 @@ pipeline{
         sh '''echo test steps'''
     }
 }
-}
+// }
