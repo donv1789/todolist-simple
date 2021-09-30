@@ -7,7 +7,7 @@ pipeline{
 //                     withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
 // }    
                   
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-login', passwordVariable: 'password', usernameVariable: 'username')]) {
+                    withCredentials([usernamePassword(credentialsId: 'docker-agent-userwithpass', passwordVariable: 'password', usernameVariable: 'username')]) {
                           
                             sh 'docker build -t donv1789/todolist:v10 .'
                             echo 'logout docker'
