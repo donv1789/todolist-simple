@@ -11,11 +11,11 @@ pipeline{
                 git 'https://github.com/donv1789/todolist-simple.git'
 
             }
-
         }
 
     }
 }
+
 // pipeline{
 //     agent any 
 //     stages {
