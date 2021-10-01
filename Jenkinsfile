@@ -13,7 +13,7 @@
         sh '''echo build steps'''
     }
     stage('Test') {
-        sh 'sudo docker-compose up'
+        sh 'sudo -S docker-compose up'
         sh '$pw'
     }
 }
