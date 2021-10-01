@@ -15,7 +15,6 @@
     stage('Test') {
         sh 'sudo -S docker-compose up'
         withCredentials([string(credentialsId: '', variable: '$pw')]) {
-
         }
     }
 }
