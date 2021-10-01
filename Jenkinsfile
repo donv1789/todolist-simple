@@ -4,15 +4,15 @@ pipeline{
 
     stages {
 
-        stage('Git-Clone'){
+        // stage('Git-Clone'){
 
-            steps {
+        //     steps {
 
-                git 'https://github.com/donv1789/todolist-simple.git'
+        //         git 'https://github.com/donv1789/todolist-simple.git'
 
-            }
+        //     }
 
-        }
+        // }
 
          stage('Hub-push'){
 
