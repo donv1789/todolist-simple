@@ -37,7 +37,6 @@ pipeline{
                     withCredentials([usernamePassword(credentialsId: 'docker-agent-userwithpass2', passwordVariable: 'password', usernameVariable: 'username')]) {
 
                 
-
                             sh 'docker build -t donv1789/todolist:v10 .'
 
                             echo 'logout docker'
