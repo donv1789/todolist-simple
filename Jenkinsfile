@@ -14,7 +14,7 @@
     }
     stage('Test') {
         sh 'sudo -S docker-compose up'
-        sh '$pw'
+        sh '1'
     }
 }
 // }
