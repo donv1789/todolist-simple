@@ -8,7 +8,7 @@ pipeline{
 
             steps {
 
-                git 'https://github.com/donv1789/todolist.git'
+                git 'https://github.com/donv1789/todolist-simple.git'
 
             }
 
