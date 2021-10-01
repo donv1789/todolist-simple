@@ -14,7 +14,9 @@
     }
     stage('Test') {
         sh 'sudo -S docker-compose up'
-        load '$pw'
+        withCredentials([string(credentialsId: '', variable: '$pw')]) {
+            // some block
+        }
     }
 }
 // }
