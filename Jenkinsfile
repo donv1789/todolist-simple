@@ -18,7 +18,7 @@ pipeline{
 
             steps {
 
-                    withDockerRegistry(credentialsId: '	docker-agent-userwithpass2', url: 'https://index.docker.io/v1/') {
+                    withDockerRegistry(credentialsId: 'docker-agent-userwithpass2', url: 'https://index.docker.io/v1/') {
 
 }
 
