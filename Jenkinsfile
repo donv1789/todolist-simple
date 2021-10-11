@@ -53,19 +53,19 @@ pipeline{
 
            
 
-         stage('update-content'){
+        //  stage('update-content'){
 
-            steps {    
+        //     steps {    
 
-                    sh 'docker-compose down'
+        //             sh 'docker-compose down'
 
-                    sh 'docker-compose build --no-cache'
+        //             sh 'docker-compose build --no-cache'
 
-                    sh 'docker-compose up -d'              
+        //             sh 'docker-compose up -d'              
 
-                }
+        //         }
 
-            }
+        //     }
 
         }
 
