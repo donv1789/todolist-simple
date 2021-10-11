@@ -21,23 +21,25 @@ pipeline{
 
             steps {                  
 
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'password', usernameVariable: 'username')]) {
+                    withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
 
 
+                        sh 'docker build -t donv1789/todolist:v10'
+                        sh 'docker push donv1789/todolist:v10'
 
-                            sh 'docker build -t donv1789/todolist:v10 .'        
+                            // sh 'docker build -t donv1789/todolist:v10 .'        
 
-                            echo '$password'
+                            // echo '$password'
 
-                            sh 'echo $password | docker login --username $username --password-stdin'
+                            // sh 'echo $password | docker login --username $username --password-stdin'
 
-                            echo 'login docker'
+                            // echo 'login docker'
 
-                            sh 'docker push donv1789/todolist:v10'
+                            // sh 'docker push donv1789/todolist:v10'
 
-                            sh 'docker logout'
+                            // sh 'docker logout'
 
-                            echo 'logout docker'
+                            // echo 'logout docker'
 
                     }
 
