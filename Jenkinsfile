@@ -37,9 +37,9 @@ pipeline{
 
                             // sh 'docker push donv1789/todolist:v10'
 
-                            // sh 'docker logout'
+                             sh 'docker logout'
 
-                            // echo 'logout docker'
+                             echo 'logout docker'
                     }
 
                
