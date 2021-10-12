@@ -25,7 +25,7 @@ pipeline{
                         withCredentials([usernamePassword(credentialsId: 'docker-hub', 
                                                 usernameVariable: 'USER', 
                                                 passwordVariable: 'PASSWORD')]) {
-                    sh 'docker login -u "$USER" -p "$PASSWORD" donv1789:todolist'
+                    sh 'docker login -u "$USER" -p "$PASSWORD" donv1789'
                 }
 
                         // sh 'docker build -t donv1789/todolist:v10'
