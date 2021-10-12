@@ -1,75 +1,49 @@
-// pipeline{
-//     agent any
-//     stages {
-//         stage('Clone') {
-//             steps {
-//                 git 'https://github.com/donv1789/todolist-simple.git'
-//             }
-//         }
-        
-//     }
-// }
 pipeline{
 
-    agent any
+    agent {label 'slave1'}
+
+    environment {
+        DOCKERHUB_CREDENTIALS=credentials('docker-hub')
+    }
 
     stages {
 
+        stage('Clone') {
+            steps {
+                git 'https://github.com/donv1789/todolist-simple.git'
+            }
+        }
+        
+
+        stage('Build') {
+            steps {
+                sh 'docker build -t donv1789/todolist1:latest .'
+            }
+        }
 
 
-         stage('Hub-push'){
+         stage('Login'){
 
             steps {                  
-
-                    // withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
-                        withCredentials([usernamePassword(credentialsId: 'docker-hub', 
-                                                usernameVariable: 'USER', 
-                                                passwordVariable: 'PASSWORD')]) {
-                    sh 'docker login -u "$USER" -p "$PASSWORD" donv1789'
-                }
-
-                        // sh 'docker build -t donv1789/todolist:v10'
-                        // sh 'docker push donv1789/todolist:v10'
-
-                            // sh 'docker build -t donv1789/todolist:v10 .'        
-
-                            // echo '$password'
-
-                            // sh 'echo $password | docker login --username $username --password-stdin'
-
-                            // echo 'login docker'
-
-                            // sh 'docker push donv1789/todolist:v10'
-
-                            //  sh 'docker logout'
-
-                             echo 'logout docker'
-                    // }
-
-               
-
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 }
 
             }
 
+                     stage('Push'){
 
+            steps {                  
+                    sh 'docker push donv1789/todolist1:latest'
+                }
+
+            }
+    }
+    post {
+        always {
+            sh 'docker loguot'
+        }
+    }
 
            
-
-        //  stage('update-content'){
-
-        //     steps {    
-
-        //             sh 'docker-compose down'
-
-        //             sh 'docker-compose build --no-cache'
-
-        //             sh 'docker-compose up -d'              
-
-        //         }
-
-        //     }
-
-        }
-
-    }
+}
+ 
