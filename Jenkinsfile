@@ -2,9 +2,9 @@ pipeline{
 
     agent {label 'slave1'}
 
-    // environment {
-    //     DOCKERHUB_CREDENTIALS=credentials('docker-hub')
-    // }
+    environment {
+        DOCKERHUB_CREDENTIALS=credentials('docker-hub')
+    }
 
     stages {
 
@@ -43,7 +43,6 @@ pipeline{
     //         sh 'docker loguot'
     //     }
     // }
-
-           
+    
 }
  
