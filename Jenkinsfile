@@ -22,7 +22,11 @@ pipeline{
             steps {                  
 
                     // withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
-
+                        withCredentials([usernamePassword(credentialsId: 'docker-hub', 
+                                                usernameVariable: 'USER', 
+                                                passwordVariable: 'PASSWORD')]) {
+                    sh 'docker login -u "$USER" -p "$PASSWORD" donv1789:todolist'
+                }
 
                         // sh 'docker build -t donv1789/todolist:v10'
                         // sh 'docker push donv1789/todolist:v10'
