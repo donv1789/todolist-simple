@@ -1,6 +1,6 @@
 pipeline{
 
-    agent {label 'master'}
+    agent {label 'slave1'}
 
     environment {
         DOCKERHUB_CREDENTIALS=credentials('docker-hub')
@@ -30,7 +30,7 @@ pipeline{
 
             }
 
-                     stage('Push'){
+        stage('Push'){
 
             steps {                  
                     sh 'docker push donv1789/todolist1:latest'
