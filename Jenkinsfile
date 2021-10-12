@@ -15,34 +15,34 @@ pipeline{
         }
         
 
-    //     stage('Build') {
-    //         steps {
-    //             sh 'docker build -t donv1789/todolist1:latest .'
-    //         }
-    //     }
+        stage('Build') {
+            steps {
+                sh 'docker build -t donv1789/todolist1:latest .'
+            }
+        }
 
 
-    //      stage('Login'){
+         stage('Login'){
 
-    //         steps {                  
-    //                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-    //             }
+            steps {                  
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                }
 
-    //         }
+            }
 
-    //     stage('Push'){
+        stage('Push'){
 
-    //         steps {                  
-    //                 sh 'docker push donv1789/todolist1:latest'
-    //             }
+            steps {                  
+                    sh 'docker push donv1789/todolist1:latest'
+                }
 
-    //         }
+            }
     }
-    // post {
-    //     always {
-    //         sh 'docker loguot'
-    //     }
-    // }
+    post {
+        always {
+            sh 'docker loguot'
+        }
+    }
     
 }
  
