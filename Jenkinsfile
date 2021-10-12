@@ -33,15 +33,24 @@ pipeline{
 
             steps {                  
                     sh 'docker push donv1789/todolist1:latest'
+                    sh 'docker logout'
+                    echo 'logout docker'
                 }
 
             }
+            stage('update-content'){
+            steps {    
+                    sh 'docker-compose down'
+                    sh 'docker-compose build --no-cache'
+                    sh 'docker-compose up -d'               
+                }
+            }
     }
-    post {
-        always {
-            sh 'docker logout'
-        }
-    }
+    // post {
+    //     always {
+    //         sh 'docker logout'
+    //     }
+    // }
     
 }
  
