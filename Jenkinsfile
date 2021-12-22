@@ -1,9 +1,9 @@
 pipeline{
 
-    agent {label 'slave2'}
+    agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS=credentials('docker-hub')
+        DOCKERHUB_CREDENTIALS=credentials('github')
     }
 
     stages {
