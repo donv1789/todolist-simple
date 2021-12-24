@@ -10,3 +10,4 @@
         # email: docker@docker.io
     - name: Execute pull docker image from dockerhub
       command: docker pull donv1789/todolist1:lates
+      
