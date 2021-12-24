@@ -1,0 +1,7 @@
+- name: demo1
+  hosts: servers
+  become: yes
+  become_user: root
+  tasks:
+    - name: Execute command "check ip"
+      command: ifconfig
