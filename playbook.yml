@@ -3,5 +3,5 @@
   become: yes
   become_user: root
   tasks:
-    - name: Execute command "check ip"
-      command: ifconfig
+    - name: Execute pull docker image from dockerhub
+      command: docker pull donv1789/todolist1:lates
