@@ -2,7 +2,6 @@
   hosts: servers
   become: yes
   become_user: root
-  sudo: yes
   tasks:
     - name: Log into DockerHub
       docker_login:
