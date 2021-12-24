@@ -42,8 +42,7 @@ pipeline{
         stage('Run playbook'){
 
             steps {                  
-                    sh 'cd /etc/ansible'
-                    sh 'ansible-playbook -i /etc/ansible/hosts playbook1.yml'
+                    ansiblePlaybook credentialsId: 'key-master', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'dev.inv', playbook: 'playbook.yml'
                 }
 
             }
