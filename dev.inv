@@ -2,5 +2,3 @@
 server1 ansible_host=192.168.10.45 ansible_ssh_pass=1 ansible_ssh_user=ansible0
 server2 ansible_host=192.168.10.46 ansible_ssh_pass=1 ansible_ssh_user=ansible
 
-[all:vars]
-ansible_python_interpreter=/usr/bin/python3
