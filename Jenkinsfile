@@ -38,14 +38,23 @@ pipeline{
                 }
 
             }
-            stage('update-content'){
-            steps {    
-                    sh 'docker-compose down'
-                    sh 'docker-compose build --no-cache'
-                    sh 'docker-compose up -d'               
+        
+        stage('Run playbook'){
+
+            steps {                  
+                    sh 'cd /etc/ansible'
+                    sh 'ansible-playbook -i /etc/ansible/hosts playbook1.yml'
                 }
+
             }
-    }
+//             stage('update-content'){
+//             steps {    
+//                     sh 'docker-compose down'
+//                     sh 'docker-compose build --no-cache'
+//                     sh 'docker-compose up -d'               
+//                 }
+//             }
+//     }
     // post {
     //     always {
     //         sh 'docker logout'
