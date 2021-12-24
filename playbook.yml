@@ -3,5 +3,10 @@
   become: yes
   become_user: root
   tasks:
+    - name: Log into DockerHub
+      docker_login:
+        username: donv1789
+        password: Do@178199
+        # email: docker@docker.io
     - name: Execute pull docker image from dockerhub
       command: docker pull donv1789/todolist1:lates
